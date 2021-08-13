@@ -342,28 +342,6 @@ export class AutoridadesService {
         "MAYORIA": "*"
       },
       {
-        "N": "38",
-        "NOMBRE": "Pablo Oliva",
-        "COMUNA": "TOMÉ",
-        "REGION": "BIOBÍO",
-        "PEV": "IND",
-        "MAYORIA": "*"
-      },
-      {
-        "N": "39",
-        "NOMBRE": "Felipe Romero",
-        "COMUNA": "TOMÉ",
-        "REGION": "BIOBÍO",
-        "PEV": "IND"
-      },
-      {
-        "N": "40",
-        "NOMBRE": "Juan Godoy",
-        "COMUNA": "YUMBEL",
-        "REGION": "BIOBÍO",
-        "PEV": "IND"
-      },
-      {
         "N": "41",
         "NOMBRE": "Alejandra Contreras",
         "COMUNA": "CHOLCHOL",

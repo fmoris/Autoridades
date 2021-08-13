@@ -3,7 +3,7 @@
   <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button> -->
-  <span>Autoridades Ecologistas</span>
+  <span>Autoridades Ecologistas e Independientes en Cargos de Representación Popular</span>
   <!-- <span fxFlex></span>
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon>favorite</mat-icon>
@@ -15,11 +15,12 @@
 <div id="mainContent">
 
 
-  <mat-grid-list [cols]="breakpoint" rowHeight="1:1.5" (window:resize)="onResize($event)" class="lista">
+  <mat-grid-list [cols]="breakpoint" [rowHeight]="rowHeight" (window:resize)="onResize($event)" class="lista">
     <mat-grid-tile *ngFor="let auth of auths" fxLayoutWrap>
       <mat-card class="card">
         <mat-card-header>
-          <div mat-card-avatar [ngClass]="auth.PEV === 'PEV' ? 'pev-header-image' : 'default-header-image'"></div>
+          <div mat-card-avatar [ngClass]="auth.PEV === 'PEV' ? 'pev-header-image' : 'default-header-image'">
+          </div>
           <mat-card-title>{{auth.NOMBRE}}</mat-card-title>
           <mat-card-subtitle>{{auth.REGION}} - {{auth.COMUNA}} </mat-card-subtitle>
           <span fxFlex></span>
@@ -27,9 +28,10 @@
         </mat-card-header>
 
 
-        <img *ngIf="auth.PEV === 'PEV'; else indLogo" mat-card-image src="../assets/fondo.svg" loading="lazy">
+        <img *ngIf="auth.PEV === 'PEV'; else indLogo" mat-card-image src="../assets/fondo_sin_foto_pev.png"
+          loading="lazy">
         <ng-template #indLogo>
-          <img mat-card-image src="../assets/fondo_sin_foto_ind.svg" loading="lazy">
+          <img mat-card-image src="../assets/fondo_sin_foto_ind.png" loading="lazy">
         </ng-template>
 
         <mat-card-content>

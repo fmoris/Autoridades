@@ -8,6 +8,9 @@ mat-toolbar {
   img {
     margin-right: 15px;
   }
+  span {
+    overflow: scroll;
+  }
 }
 .default-header-image {
   background-image: url("../assets/ind.svg");
@@ -29,11 +32,4 @@ mat-toolbar {
 
 .moreInfo {
   text-align: center;
-  button {
-    background-color: #2f4f2c;
-    color: white;
-    :hover {
-      background-color: #d8d93e;
-    }
-  }
 }
