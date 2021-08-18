@@ -7,4 +7,5 @@ export interface Autoridades {
   CELULAR?: string;
   CORREO?: string;
   MAYORIA?: string;
+  CARGO?: string;
 }

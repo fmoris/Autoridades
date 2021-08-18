@@ -13,10 +13,9 @@
   </button> -->
 </mat-toolbar>
 <div id="mainContent">
-
-
+  <h2>DIPUTADOS ({{diputados.length}})</h2>
   <mat-grid-list [cols]="breakpoint" [rowHeight]="rowHeight" (window:resize)="onResize($event)" class="lista">
-    <mat-grid-tile *ngFor="let auth of auths" fxLayoutWrap>
+    <mat-grid-tile *ngFor="let auth of diputados" fxLayoutWrap>
       <mat-card class="card">
         <mat-card-header>
           <div mat-card-avatar [ngClass]="auth.PEV === 'PEV' ? 'pev-header-image' : 'default-header-image'">
@@ -35,17 +34,84 @@
         </ng-template>
 
         <mat-card-content>
-          <!-- <p class="moreInfo">
-            <span>
-              <mat-icon>phone</mat-icon>
-            </span>
-            <span> +56 </span>{{auth.CELULAR}}
-          </p> -->
+
           <p class="moreInfo">
             <span>
               <mat-icon>mail</mat-icon>
             </span>
             <span>
+              {{auth.CORREO}}
+            </span>
+          </p>
+        </mat-card-content>
+
+      </mat-card>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+  <h2>GOBERNACIONES REGIONALES ({{regionalGob.length}})</h2>
+  <mat-grid-list [cols]="breakpoint" [rowHeight]="rowHeight" (window:resize)="onResize($event)" class="lista">
+    <mat-grid-tile *ngFor="let auth of regionalGob" fxLayoutWrap>
+      <mat-card class="card">
+        <mat-card-header>
+          <div mat-card-avatar [ngClass]="auth.PEV === 'PEV' ? 'pev-header-image' : 'default-header-image'">
+          </div>
+          <mat-card-title>{{auth.NOMBRE}}</mat-card-title>
+          <mat-card-subtitle>{{auth.REGION}} - {{auth.COMUNA}} </mat-card-subtitle>
+          <span fxFlex></span>
+          <mat-icon *ngIf="auth.MAYORIA" matTooltip="Primera Mayoria">star</mat-icon>
+        </mat-card-header>
+
+
+        <img *ngIf="auth.PEV === 'PEV'; else indLogo" mat-card-image src="../assets/fondo_sin_foto_pev.png"
+          loading="lazy">
+        <ng-template #indLogo>
+          <img mat-card-image src="../assets/fondo_sin_foto_ind.png" loading="lazy">
+        </ng-template>
+
+        <mat-card-content>
+
+          <p class="moreInfo">
+            <span>
+              <mat-icon>mail</mat-icon>
+            </span>
+            <span>
+              {{auth.CORREO}}
+            </span>
+          </p>
+        </mat-card-content>
+
+      </mat-card>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+  <h2>CONCEJALES ({{concejales.length}})</h2>
+  <mat-grid-list [cols]="breakpoint" [rowHeight]="rowHeight" (window:resize)="onResize($event)" class="lista">
+    <mat-grid-tile *ngFor="let auth of concejales" fxLayoutWrap>
+      <mat-card class="card">
+        <mat-card-header>
+          <div mat-card-avatar [ngClass]="auth.PEV === 'PEV' ? 'pev-header-image' : 'default-header-image'">
+          </div>
+          <mat-card-title>{{auth.NOMBRE}}</mat-card-title>
+          <mat-card-subtitle>{{auth.REGION}} - {{auth.COMUNA}} </mat-card-subtitle>
+          <span fxFlex></span>
+          <mat-icon *ngIf="auth.MAYORIA" matTooltip="Primera Mayoria">star</mat-icon>
+        </mat-card-header>
+
+
+        <img *ngIf="auth.PEV === 'PEV'; else indLogo" mat-card-image src="../assets/fondo_sin_foto_pev.png"
+          loading="lazy">
+        <ng-template #indLogo>
+          <img mat-card-image src="../assets/fondo_sin_foto_ind.png" loading="lazy">
+        </ng-template>
+
+        <mat-card-content>
+
+          <p class="moreInfo">
+            <span>
+              <mat-icon>mail</mat-icon>
               {{auth.CORREO}}
             </span>
           </p>

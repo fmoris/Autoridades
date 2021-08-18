@@ -10,11 +10,21 @@ import { AutoridadesService } from './services/autoridades.service';
 export class AppComponent implements OnInit {
   breakpoint: any;
   rowHeight: any;
-  auths: Autoridades[];
+  diputados: Autoridades[];
+  regionalGob: Autoridades[];
+  concejales: Autoridades[];
   constructor(
     private autoridadesService: AutoridadesService
   ) {
-    this.auths = this.autoridadesService.getAutoridades();
+    this.diputados = this.autoridadesService.getAutoridades().filter(dip => {
+      return dip.CARGO === 'Diputado';
+    });
+    this.regionalGob = this.autoridadesService.getAutoridades().filter(dip => {
+      return dip.CARGO === 'Gobernadora Regional';
+    })
+    this.concejales = this.autoridadesService.getAutoridades().filter(conc => {
+      return conc.CARGO === 'Concejalía';
+    });
   }
   ngOnInit(): void {
     this.breakpoint = this.calulateBreakPoint();
