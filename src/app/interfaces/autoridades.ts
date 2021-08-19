@@ -8,4 +8,6 @@ export interface Autoridades {
   CORREO?: string;
   MAYORIA?: string;
   CARGO?: string;
+  image?: string;
+  errorImage?: string;
 }

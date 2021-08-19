@@ -18,12 +18,32 @@ export class AppComponent implements OnInit {
   ) {
     this.diputados = this.autoridadesService.getAutoridades().filter(dip => {
       return dip.CARGO === 'Diputado';
+    }).map(d => {
+      return {
+        ...d,
+        errorImage: d.PEV === 'PEV' ? '../assets/fondo_sin_foto_pev.png' : '../assets/fondo_sin_foto_ind.png',
+        image: 'http://autoridades.ecologistas.cl/fotos_autoridades/' + d.N + '.png'
+      }
     });
+    
     this.regionalGob = this.autoridadesService.getAutoridades().filter(dip => {
       return dip.CARGO === 'Gobernadora Regional';
-    })
+    }).map(d => {
+      return {
+        ...d,
+        errorImage: d.PEV === 'PEV' ? '../assets/fondo_sin_foto_pev.png' : '../assets/fondo_sin_foto_ind.png',
+        image: 'http://autoridades.ecologistas.cl/fotos_autoridades/' + d.N + '.png'
+      }
+    });
+
     this.concejales = this.autoridadesService.getAutoridades().filter(conc => {
       return conc.CARGO === 'Concejalía';
+    }).map(d => {
+      return {
+        ...d,
+        errorImage: d.PEV === 'PEV' ? '../assets/fondo_sin_foto_pev.png' : '../assets/fondo_sin_foto_ind.png',
+        image: 'http://autoridades.ecologistas.cl/fotos_autoridades/' + d.N + '.png'
+      }
     });
   }
   ngOnInit(): void {
@@ -57,5 +77,9 @@ export class AppComponent implements OnInit {
       bp = 4
     }
     return bp;
+  }
+
+  onImgError(event:any, auth: Autoridades):any {
+    return event.target.src = auth.errorImage
   }
 }

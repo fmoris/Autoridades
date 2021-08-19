@@ -26,20 +26,13 @@
           <mat-icon *ngIf="auth.MAYORIA" matTooltip="Primera Mayoria">star</mat-icon>
         </mat-card-header>
 
-
-        <img *ngIf="auth.PEV === 'PEV'; else indLogo" mat-card-image src="../assets/fondo_sin_foto_pev.png"
-          loading="lazy">
-        <ng-template #indLogo>
-          <img mat-card-image src="../assets/fondo_sin_foto_ind.png" loading="lazy">
-        </ng-template>
+        <img mat-card-image [src]="auth.image" loading="lazy" (error)="onImgError($event, auth)">
 
         <mat-card-content>
 
-          <p class="moreInfo">
+          <p class="moreInfo" >
             <span>
               <mat-icon>mail</mat-icon>
-            </span>
-            <span>
               {{auth.CORREO}}
             </span>
           </p>
@@ -64,11 +57,7 @@
         </mat-card-header>
 
 
-        <img *ngIf="auth.PEV === 'PEV'; else indLogo" mat-card-image src="../assets/fondo_sin_foto_pev.png"
-          loading="lazy">
-        <ng-template #indLogo>
-          <img mat-card-image src="../assets/fondo_sin_foto_ind.png" loading="lazy">
-        </ng-template>
+        <img mat-card-image [src]="auth.image" loading="lazy" (error)="onImgError($event, auth)">
 
         <mat-card-content>
 
@@ -101,11 +90,7 @@
         </mat-card-header>
 
 
-        <img *ngIf="auth.PEV === 'PEV'; else indLogo" mat-card-image src="../assets/fondo_sin_foto_pev.png"
-          loading="lazy">
-        <ng-template #indLogo>
-          <img mat-card-image src="../assets/fondo_sin_foto_ind.png" loading="lazy">
-        </ng-template>
+        <img mat-card-image [src]="auth.image" loading="lazy" (error)="onImgError($event, auth)">
 
         <mat-card-content>
 
