@@ -10,4 +10,5 @@ export interface Autoridades {
   CARGO?: string;
   image?: string;
   errorImage?: string;
+  IMG?: string;
 }

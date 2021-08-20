@@ -52,8 +52,6 @@ export class AppComponent implements OnInit {
   }
 
   onResize(event: any) {
-    console.log(event.target.innerWidth);
-    console.log(this.calulateBreakPoint());
     this.breakpoint = this.calulateBreakPoint();
     this.rowHeight = this.breakpoint === 1 ? '1: 1.3' : '1:1.4'
   }
